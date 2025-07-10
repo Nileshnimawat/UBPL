@@ -52,8 +52,7 @@ const ContactsSection = () => {
             {/* Decorative Quote */}
             <div className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
               <p className="text-gray-700 italic font-medium">
-                "Ready to connect and collaborate on your next infrastructure
-                project"
+                &ldquo;Ready to connect and collaborate on your next infrastructure project&rdquo;
               </p>
             </div>
           </div>

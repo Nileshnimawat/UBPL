@@ -35,7 +35,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-bold text-white sm:text-5xl">Contact Us</h1>
           <p className="mt-4 text-lg text-gray-200">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </div>

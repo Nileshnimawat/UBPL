@@ -67,7 +67,7 @@ const WhatWeDo = () => {
           style={{ transitionDelay: "0.2s" }}
         >
           Our diverse verticals span across telecom, construction, energy, and
-          skilling to serve India's growing infrastructure needs.
+          skilling to serve India&apos;s growing infrastructure needs.
         </h3>
 
         {/* Service Cards */}
@@ -83,7 +83,7 @@ const WhatWeDo = () => {
               style={{
                 transitionDelay: `${0.4 + i * 0.2}s`,
                 animation: isVisible
-                  ? `bounceIn 0.8s ease-out ${0.4 + i * 0.2}s both`
+                  ? `bounceIn 0.8s ease-out ${0.4 + i * 0.2}s both` 
                   : "none",
               }}
             >

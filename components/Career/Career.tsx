@@ -55,7 +55,7 @@ const Career = () => {
           <div className="text-green-600 text-6xl mb-4">✓</div>
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h2>
           <p className="text-gray-600">
-            Thank you for your interest in joining our team. We'll review your application and get back to you soon.
+            Thank you for your interest in joining our team. We&apos;ll review your application and get back to you soon.
           </p>
         </div>
       </div>
