@@ -42,12 +42,12 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* <div className="hidden sm:flex items-center gap-3">
             <FaFacebookF className="text-sm cursor-pointer hover:text-gray-200" />
             <FaTwitter className="text-sm cursor-pointer hover:text-gray-200" />
             <FaLinkedinIn className="text-sm cursor-pointer hover:text-gray-200" />
             <FaPinterestP className="text-sm cursor-pointer hover:text-gray-200" />
-          </div>
+          </div> */}
         </div>
       </div>
 
