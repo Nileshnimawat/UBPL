@@ -38,15 +38,10 @@ const Footer = () => {
     "/footer/1.jpg",
     "/footer/2.jpeg",
     "/footer/gas.jpg",
-    "/footer/civil.jpg",
+    "/footer/Civil.jpg",
   ];
 
-  const bottomLinks : Array<Array<string>> = [
-    ["Privacy Policy", "/privacy-policy"],
-    ["Terms & Conditions", "/terms"],
-    ["Disclaimer", "/disclaimer"],
-    ["Sitemap", "/sitemap"],
-  ];
+
 
   return (
     <footer
@@ -121,21 +116,7 @@ const Footer = () => {
           rights reserved.
         </span>
 
-        <div className="flex items-center gap-1 mt-2 md:mt-0">
-          {bottomLinks.map(([label, href], index) => (
-            <div key={label} className="flex items-center">
-              <Link
-                href={href}
-                className="hover:text-blue-200 transition-colors duration-200 px-1"
-              >
-                {label}
-              </Link>
-              {index < bottomLinks.length - 1 && (
-                <span className="mx-2">|</span>
-              )}
-            </div>
-          ))}
-        </div>
+     
       </div>
     </footer>
   );
