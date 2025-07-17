@@ -7,7 +7,7 @@ interface FormData {
     phone: string,
     position: string,
     experience: string,
-    message: String
+    message: string
 }
 
 const Career = () => {

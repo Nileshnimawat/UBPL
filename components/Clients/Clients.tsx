@@ -16,11 +16,7 @@ import CallToAction from "../CallToAction";
 import { Clients as CLIENTS } from "../utils";
 import Image from "next/image";
 
-type Client = {
-  name: string;
-  category: string;
-  logo: string;
-};
+
 
 const getCategoryIcon = (category: string) => {
   switch (category) {
