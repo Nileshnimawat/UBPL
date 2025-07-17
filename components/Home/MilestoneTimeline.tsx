@@ -15,7 +15,7 @@ interface MilestoneItemProps {
 
 const MilestoneItem: React.FC<MilestoneItemProps> = ({ year, description, isLeftAligned, index, isVisible }) => {
   return (
-    <div className={`relative flex items-center w-full my-8 ${isLeftAligned ? 'justify-start' : 'justify-end'}`}>
+    <div className={`relative text-xs sm:text-sm md:text-md lg:text-lg flex items-center w-full my-8 ${isLeftAligned ? 'justify-start' : 'justify-end'}`}>
       {/* Year on the left for left-aligned items, on the right for right-aligned */}
       {isLeftAligned && (
         <div className={`flex-shrink-0 w-1/2 pr-6 text-right transition-all duration-700 ease-out ${
@@ -37,7 +37,7 @@ const MilestoneItem: React.FC<MilestoneItemProps> = ({ year, description, isLeft
       </div>
 
       {/* Description box */}
-      <div className={`flex-shrink-0 w-1/2 p-6 rounded-xl shadow-md bg-gradient-to-r from-white to-gray-50 border-l-4 ${
+      <div className={`flex-shrink-0 w-1/2 p-3 sm:p-4 md:p-5 xl:p-6 rounded-xl shadow-md bg-gradient-to-r from-white to-gray-50 border-l-4 ${
         isLeftAligned ? 'ml-6 border-blue-500' : 'mr-6 border-orange-500'
       } hover:shadow-lg transition-all duration-300 hover:scale-[1.02] ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -63,7 +63,7 @@ const MilestoneItem: React.FC<MilestoneItemProps> = ({ year, description, isLeft
 
 
 const MilestoneTimeline: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {

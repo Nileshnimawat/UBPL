@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const WhoWeAre = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,7 +38,7 @@ const WhoWeAre = () => {
           }`}
           style={{ transitionDelay: "0.2s" }}
         >
-          <div className="transition-all duration-300 hover:text-[#1976a3]">
+          <div className="transition-all duration-300 hover:text-[#1976a3] text-sm sm:text-md lg:text-lg">
             <p className="mb-4">
               <strong className="text-blue-800">Utishta Bharata Private Limited (UBPL)</strong> is a leading civil and telecommunication infrastructure company with operations spanning across Madhya Pradesh, Bihar, Uttar Pradesh, and Chhattisgarh.
             </p>

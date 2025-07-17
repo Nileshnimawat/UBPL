@@ -1,8 +1,17 @@
 "use client"
 import React, { useState } from 'react'
 
+interface FormData {
+  name: string,
+    email: string,
+    phone: string,
+    position: string,
+    experience: string,
+    message: String
+}
+
 const Career = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
@@ -11,8 +20,8 @@ const Career = () => {
     message: ''
   })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const [submitted, setSubmitted] = useState<boolean>(false)
 
  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({

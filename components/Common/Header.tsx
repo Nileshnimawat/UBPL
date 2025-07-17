@@ -6,10 +6,10 @@ import Image from 'next/image';
 import { 
   FaPhoneAlt, 
   FaClock, 
-  FaFacebookF, 
-  FaTwitter, 
-  FaLinkedinIn, 
-  FaPinterestP,
+  // FaFacebookF, 
+  // FaTwitter, 
+  // FaLinkedinIn, 
+  // FaPinterestP,
   FaChevronDown,
   FaBars,
   FaTimes
@@ -97,8 +97,8 @@ const Navbar: React.FC = () => {
 
             {/* Right Navigation */}
             <div className="hidden md:flex items-center justify-end space-x-5 "> 
-              <Link href={"/investors"} className="flex items-center space-x-1 text-gray-700 font-semibold hover:text-orange-400 transition-colors cursor-pointer">
-                <span>INVESTORS</span>
+              <Link href={"/clients"} className="flex items-center space-x-1 text-gray-700 font-semibold hover:text-orange-400 transition-colors cursor-pointer">
+                <span>CLIENTS</span>
                 <FaChevronDown className="text-xs" />
               </Link>
               <Link href="/machinery" className="text-gray-700 font-semibold hover:text-orange-400 transition-colors">

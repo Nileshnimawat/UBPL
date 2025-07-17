@@ -16,7 +16,7 @@ const services : Array<serviceTypes> = [
 ];
 
 const WhatWeDo = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -61,7 +61,7 @@ const WhatWeDo = () => {
         </div>
 
         <h3
-          className={`text-lg font-semibold mb-12 bg-gradient-to-r from-blue-50 to-blue-25 px-6 py-4 rounded-xl w-fit border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] ${
+          className={`text-sm sm:text-md lg:text-lg font-semibold mb-12 bg-gradient-to-r from-blue-50 to-blue-25 px-6 py-4 rounded-xl w-fit border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           }`}
           style={{ transitionDelay: "0.2s" }}
@@ -75,7 +75,7 @@ const WhatWeDo = () => {
           {services.map((item, i) => (
             <div
               key={i}
-              className={`flex flex-col items-center justify-center w-60 h-60 rounded-full bg-gradient-to-br from-[#004c66] to-[#003d52] text-white text-center p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-110 hover:-rotate-3 cursor-pointer group ${
+              className={`flex flex-col items-center justify-center w-35 h-35 sm:w-40 sm:h-40 md:w-50 md:h-50  lg:w-60 lg:h-60 rounded-full bg-gradient-to-br from-[#004c66] to-[#003d52] text-white text-center p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-110 hover:-rotate-3 cursor-pointer group ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
@@ -87,10 +87,10 @@ const WhatWeDo = () => {
                   : "none",
               }}
             >
-              <div className="text-6xl mb-4 transition-all duration-300 group-hover:scale-125 group-hover:animate-pulse">
+              <div className="text-xl sm:text-2xl md:text-4xl lg:text-6xl mb-4 transition-all duration-300 group-hover:scale-125 group-hover:animate-pulse">
                 {item.icon}
               </div>
-              <div className="text-xl font-bold tracking-wide group-hover:text-orange-300 transition-colors duration-300">
+              <div className="text-xs sm:text-md md:text-lg lg:text-xl font-bold tracking-wide group-hover:text-orange-300 transition-colors duration-300">
                 {item.title}
               </div>
 

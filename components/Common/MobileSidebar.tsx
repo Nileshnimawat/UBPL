@@ -15,9 +15,9 @@ const MobileSidebar = ({ isOpen }: Props) => {
       <Link href="/about">ABOUT</Link>
       <Link href="/services">SERVICES</Link>
       <Link href="/projects">PROJECTS</Link>
-      <Link href="/investors">INVESTORS</Link>
-      <Link href="/machinery">MACHINERY & EQUIPMENT</Link>
-      <Link href="/careers">CAREERS</Link>
+      <Link href="/clients">CLIENTS</Link>
+      <Link href="/machinery">MACHINERY </Link>
+      <Link href="/career">CAREERS</Link>
       <Link href="/contact">CONTACT US</Link>
     </div>
   );

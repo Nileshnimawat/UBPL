@@ -10,7 +10,7 @@ const reasons : string[] = [
 ];
 
 const WhyChooseUs = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,7 +54,7 @@ const WhyChooseUs = () => {
           {reasons.map((reason, idx) => (
             <div
               key={idx}
-              className={`flex items-start gap-4 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] transform ${
+              className={`flex items-start gap-4 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] transform  ${
                 idx % 2 === 0
                   ? "bg-gradient-to-r from-blue-50 to-blue-25"
                   : "bg-gradient-to-r from-white to-gray-50"
@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
                   {String(idx + 1).padStart(2, "0")}
                 </span>
               </div>
-              <p className="text-gray-700 text-[17px] leading-relaxed transition-all duration-300 hover:text-gray-800">
+              <p className="text-gray-700 text-sm sm:text-md lg:text-lg leading-relaxed transition-all duration-300 hover:text-gray-800">
                 {reason}
               </p>
             </div>

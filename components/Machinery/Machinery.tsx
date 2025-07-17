@@ -5,8 +5,8 @@ import {machineryData} from "../utils"
 const Machinery = () => {
   
 
-  const totalOwned = machineryData.reduce((sum, item) => sum + item.owned, 0);
-  const totalHired = machineryData.reduce((sum, item) => sum + item.hired, 0);
+  const totalOwned: number = machineryData.reduce((sum, item) => sum + item.owned, 0);
+  const totalHired: number = machineryData.reduce((sum, item) => sum + item.hired, 0);
 
   return (
     <div className="min-h-screen bg-gray-50">

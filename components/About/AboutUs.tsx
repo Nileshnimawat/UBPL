@@ -32,7 +32,7 @@ const AboutUs: React.FC = () => {
                 <div className="w-16 h-1 bg-blue-600 mb-8"></div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 text-sm sm:text-md md-text-lg lg-text-xl">
                 <p className="text-gray-700 leading-relaxed">
                   <strong>Utishta Bharata Private Limited (UBPL)</strong> is a
                   leading civil and telecommunication infrastructure company
@@ -71,7 +71,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* Leadership Team Section */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-gray-50 py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Our Founders</h2>
@@ -80,7 +80,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-12 ">
             {teamMembers.map((member) => (
               <div
                 key={member.id}
@@ -94,17 +94,17 @@ const AboutUs: React.FC = () => {
                     height={100}
                     quality={100}
                     unoptimized
-                    className="w-full h-80 md:h-96 object-cover rounded-lg"
+                    className="w-full h-85 md:h-96 object-cover rounded-lg"
                   />
                 </div>
                 <div className="flex-1 flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl sm:text-2xl  lg:text-3xl font-bold text-gray-900 mb-2 md:mb-4">
                     {member.name}
                   </h3>
-                  <p className="text-xl text-orange-500 font-medium mb-6">
+                  <p className= "md:text-md  md:text-xl text-orange-500 font-medium mb-6">
                     {member.position}
                   </p>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-lg">
                     {member.description}
                   </p>
                 </div>

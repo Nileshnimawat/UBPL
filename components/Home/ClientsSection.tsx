@@ -6,16 +6,16 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../src/components/ui/card";
-import { Badge } from "../../src/components/ui/badge";
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Clients } from "../utils";
 import Image from "next/image";
 
 const ClientsSection = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [currentPage, setCurrentPage] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [animatingCards, setAnimatingCards] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [animatingCards, setAnimatingCards] = useState<boolean>(false);
 
   const filters: string[] = [
     "All",
@@ -23,8 +23,6 @@ const ClientsSection = () => {
     "Civil Infrastructure",
     "Gas Pipelines",
   ];
-
-
 
   const filteredClients =
     activeFilter === "All"
@@ -39,15 +37,12 @@ const ClientsSection = () => {
     startIndex + clientsPerPage
   );
 
-  // Initialize visibility
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  // Handle filter change with subtle animation
   const handleFilterChange = (filter: string) => {
     if (filter === activeFilter) return;
-
     setAnimatingCards(true);
     setTimeout(() => {
       setActiveFilter(filter);
@@ -56,10 +51,8 @@ const ClientsSection = () => {
     }, 200);
   };
 
-  // Handle page change
   const handlePageChange = (page: number) => {
     if (page === currentPage) return;
-
     setAnimatingCards(true);
     setTimeout(() => {
       setCurrentPage(page);
@@ -68,7 +61,7 @@ const ClientsSection = () => {
   };
 
   const getCategoryColor = (category: string) => {
-    const colors : Record<string, string> = {
+    const colors: Record<string, string> = {
       "Telecom Infrastructure": "bg-blue-50 text-blue-700 border-blue-200",
       "Sewerage Infrastructure": "bg-green-50 text-green-700 border-green-200",
       "Gas Pipelines": "bg-orange-50 text-orange-700 border-orange-200",
@@ -80,16 +73,18 @@ const ClientsSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto py-16">
         {/* Header */}
         <div
           className={`text-center mb-12 transform transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Clients</h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Our Clients
+          </h1>
+          <p className="text-base sm:text-lg text-gray-600 mb-6">
             Trusted partnerships across infrastructure sectors
           </p>
           <div className="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
@@ -97,7 +92,7 @@ const ClientsSection = () => {
 
         {/* Filter Buttons */}
         <div
-          className={`flex justify-center gap-3 mb-12 flex-wrap transform transition-all duration-700 delay-200 ${
+          className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 delay-200 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
@@ -105,13 +100,13 @@ const ClientsSection = () => {
             <Button
               key={filter}
               variant={activeFilter === filter ? "default" : "outline"}
-              size="lg"
+              size="sm"
               onClick={() => handleFilterChange(filter)}
               className={`
-                transition-all duration-300 hover:scale-105
+                transition-all duration-300
                 ${
                   activeFilter === filter
-                    ? "bg-blue-600 hover:bg-blue-700 shadow-md"
+                    ? "bg-blue-600 hover:bg-blue-700 shadow-md text-white"
                     : "hover:bg-blue-50 hover:border-blue-300"
                 }
               `}
@@ -123,28 +118,23 @@ const ClientsSection = () => {
 
         {/* Client Grid */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 transition-all duration-300 ${
+          className={`grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2 ld:gap-6 mb-8 sm:mb-10 lg: transition-all duration-300 ${
             animatingCards
-              ? "opacity-0 transform translate-y-2"
-              : "opacity-100 transform translate-y-0"
+              ? "opacity-0 translate-y-2"
+              : "opacity-100 translate-y-0"
           }`}
         >
           {displayedClients.map((client, index) => (
             <Card
               key={`${client.name}-${currentPage}`}
-              className={`
-                group relative bg-white border border-gray-200 shadow-sm
-                hover:shadow-lg hover:border-gray-300 
-                transition-all duration-300 hover:scale-105 hover:-translate-y-1
-                animate-fade-in
-              `}
+              className="group relative bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-fade-in"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: "both",
               }}
             >
-              <CardHeader className="pb-4">
-                <div className="h-32 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden mb-4 group-hover:bg-gray-200 transition-colors duration-300">
+              <CardHeader className="lg:pb-4">
+                <div className="h-24 sm:h-32 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden lg:mb-4 group-hover:bg-gray-200 transition-colors duration-300">
                   <Image
                     src={client.logo}
                     alt={`${client.name} logo`}
@@ -156,11 +146,11 @@ const ClientsSection = () => {
               </CardHeader>
 
               <CardContent className="pt-0 text-center">
-                <CardTitle className="text-lg mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <CardTitle className="text-base sm:text-lg mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {client.name}
                 </CardTitle>
                 <Badge
-                  className={`text-xs px-3 py-1 rounded-full border ${getCategoryColor(
+                  className={`text-xs lg:px-3 py-1 rounded-full border ${getCategoryColor(
                     client.category
                   )} transition-all duration-300`}
                 >
@@ -172,7 +162,7 @@ const ClientsSection = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-4 flex-wrap">
           <Button
             variant="outline"
             size="sm"
@@ -183,20 +173,17 @@ const ClientsSection = () => {
             ← Previous
           </Button>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {[...Array(totalPages)].map((_, index) => (
               <Button
                 key={index}
                 variant="ghost"
                 size="sm"
-                className={`
-                  w-10 h-10 rounded-full transition-all duration-200
-                  ${
-                    index === currentPage
-                      ? "bg-blue-600 text-white hover:bg-blue-700"
-                      : "bg-gray-200 hover:bg-gray-300"
-                  }
-                `}
+                className={`w-9 h-9 rounded-full transition-all duration-200 ${
+                  index === currentPage
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    : "bg-gray-200 hover:bg-gray-300"
+                }`}
                 onClick={() => handlePageChange(index)}
               >
                 {index + 1}
@@ -218,7 +205,7 @@ const ClientsSection = () => {
         </div>
       </div>
 
-      {/* Simplified CSS animations */}
+      {/* CSS Animation */}
       <style jsx>{`
         @keyframes fade-in {
           from {
@@ -230,7 +217,6 @@ const ClientsSection = () => {
             transform: translateY(0);
           }
         }
-
         .animate-fade-in {
           animation: fade-in 0.5s ease-out;
         }
