@@ -1,10 +1,22 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 700);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,7 +36,7 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
-  const quickLinks: Array<Array<string>> = [
+  const quickLinks = [
     ["Home", "/"],
     ["About Us", "/about"],
     ["Services", "/services"],
@@ -32,7 +44,7 @@ const Footer = () => {
     ["Machinery", "/machinery"],
   ];
 
-  const galleryImages: Array<string> = [
+  const galleryImages = [
     "/footer/slide1.jpg",
     "/footer/slide2.jpg",
     "/footer/1.jpg",
@@ -46,7 +58,6 @@ const Footer = () => {
       id="footer"
       className="bg-gray-100 relative z-10 text-sm text-gray-700"
     >
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 transition-all duration-500 ${
@@ -54,27 +65,29 @@ const Footer = () => {
           }`}
         >
           {/* Quick Links */}
-         {window.innerWidth > 700 &&  <div>
-            <h2 className="text-blue-600 font-bold text-lg sm:text-xl mb-4">
-              QUICK LINKS
-            </h2>
-            <ul className="space-y-3 text-[15px]">
-              {quickLinks.map(([label, href]) => (
-                <li key={label} className="flex items-center gap-2">
-                  <span className="text-blue-800 text-lg font-bold transition-transform duration-200 hover:translate-x-1">
-                    ›
-                  </span>
-                  <Link
-                    href={href}
-                    className="hover:text-blue-600 transition-colors duration-200"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-}
+          {isDesktop && (
+            <div>
+              <h2 className="text-blue-600 font-bold text-lg sm:text-xl mb-4">
+                QUICK LINKS
+              </h2>
+              <ul className="space-y-3 text-[15px]">
+                {quickLinks.map(([label, href]) => (
+                  <li key={label} className="flex items-center gap-2">
+                    <span className="text-blue-800 text-lg font-bold transition-transform duration-200 hover:translate-x-1">
+                      ›
+                    </span>
+                    <Link
+                      href={href}
+                      className="hover:text-blue-600 transition-colors duration-200"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Gallery */}
           <div>
             <h2 className="text-blue-600 font-bold text-lg sm:text-xl mb-4">
