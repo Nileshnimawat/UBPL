@@ -10,7 +10,7 @@ import {
   // FaTwitter,
   // FaLinkedinIn,
   // FaPinterestP,
-  FaChevronDown,
+  // FaChevronDown,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
