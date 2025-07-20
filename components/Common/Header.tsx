@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "./logos/ubpl.png";
+import Image from "/logos/ubpl.png";
 import {
   FaPhoneAlt,
   FaClock,
