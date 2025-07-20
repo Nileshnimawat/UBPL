@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "/logos/ubpl.png";
+import Image from "next/image";
 import {
   FaPhoneAlt,
   FaClock,
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
             <div className="flex justify-center items-center">
               <div className="w-35 h-25 lg:w-46 lg:h-26 mt-3 absolute bg-white rounded-3xl  flex items-center justify-center z-30">
                 <Image
-                  src="/vercel.svg"
+                  src="/logos/ubpl.png"
                   alt="Company Logo"
                   width={64}
                   height={64}
