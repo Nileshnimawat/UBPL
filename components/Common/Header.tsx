@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
                   alt="Company Logo"
                   width={64}
                   height={64}
-                  className="object-contain bg-black"
+                  className="object-contain bg-white"
                 />
               </div>
             </div>
